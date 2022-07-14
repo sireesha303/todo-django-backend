@@ -12,3 +12,4 @@ urlpatterns = [
     url(r'^account/', include('djoser.urls')),
 
 ]
+

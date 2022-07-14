@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-from .models import *
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .serializers import *
@@ -9,7 +9,7 @@ from .serializers import *
 @api_view(['GET'])
 def todosList(request):
     user = request.user
-    todos = Todo.objects.filter(owner=user)
+    todos = Todo.objects.filter(owner=user).order_by('-created_at')
     serializer = TodoSerializer(todos, many=True)
     return Response(serializer.data)
 
@@ -39,7 +39,7 @@ def updateTodo(request, id):
 
 
 @api_view(['DELETE'])
-def deleteTodo(request,id):
+def deleteTodo(request, id):
     todo = Todo.objects.get(id=id)
     todo.delete()
     return Response("Todo Deleted Successfully!..")

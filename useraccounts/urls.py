@@ -1,9 +1,10 @@
-from django.urls import path,include
+from django.template.defaulttags import url
+from django.urls import path, include
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from django.conf.urls import url, include
+from django.conf.urls import  include
 from .views import *
 
 urlpatterns = [

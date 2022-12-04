@@ -1,3 +1,4 @@
+from rest_framework import generics
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from djoser.views import UserViewSet
@@ -59,3 +60,5 @@ class MyUserViewSet(UserViewSet):
             return settings.SERIALIZERS.current_user
 
         return self.serializer_class
+
+

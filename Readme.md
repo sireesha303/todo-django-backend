@@ -1,28 +1,28 @@
 # Todo Tracker Django Backend
 
 ## About
-### Functional
-* Basic clone version of jop portals like Glassdoor.
-* Jobby app where users can login and can see list of available jobs by
-searching with job title and filter them with salary range & employment type.
-* Authentication is manadatory to see the list of available jobs.
-* After successful login user will redirected to home page.from where can go to jobs page.
-* In jobs page will have the list of avalaible jobs and can select the filters based on user abilities and potential.
-* OnClick of job user can get more info about that specified job.
 
 ### Technical
-* Django Backend Deployed in Heroku.
-* Rest-Api's Built with Django-rest-framework.
+* Created Two apps User accounts and todos to maintain views and models individually.
+* Rest-Api's Built with Django-rest-framework functional based views.
+* rest_framework_simplejwt pacajge used to add JWT authentication to the application,
 
 
 ## API
+1. /todos/ - to get list of current login user todos
+2. /todos/add/ - to create new todo
+3. /todos/str:id/ - to fetch single todo from DB
+4. /todos/str:id/update/ - to update existed todo details
+5. /todos/str:id/delete/ - to delete the todo
+6. /login/ - api for user login
+7. /token/refresh/ - to regenerate access token after stipulated time using refresh token.
+8. /account/users/ - to create new user account.
 
-
-## Technologies/Tools Used
+## Technologies/Tools/Libraries Used
 * Django
 * Django-Rest-Framework
+* Rest Framework Simple Jwt
 * Djoser
-* 
 * Pycharm
 * PostMan 
 

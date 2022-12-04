@@ -24,3 +24,4 @@ urlpatterns = [
     path('todos/', include('todos.urls')),
 
 ]
+
